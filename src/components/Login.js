@@ -4,14 +4,14 @@ import React from 'react'
 import Input from './Input'
 import FormButton from './Button'
 
-let RegisterForm = () => {
+let LoginForm = () => {
     return (
         <div className='container'>
             <Input lable='E-Mail'/>
             <Input lable='Password'/>
-            <FormButton buttonText='Sign Up'/>
+            <FormButton buttonText='Login'/>
         </div>
     )
 }
 
-export default RegisterForm
+export default LoginForm
