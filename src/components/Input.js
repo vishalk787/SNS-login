@@ -1,9 +1,10 @@
-import react from 'react'
 import  TextField  from '@mui/material/TextField'
 
-let Input = ({lable}) => {
+let Input = ({lable, userFound}) => {
+    // console.log(userFound, 'userFound')
+
     return (
-        <TextField fullWidth id="outlined-basic" label={lable} variant="outlined" className='container-item'/>
+        <TextField fullWidth helperText={userFound ? 'User not found' : ''}  id="outlined-basic" label={lable} variant="outlined" className='container-item'/>
     )
 }
 

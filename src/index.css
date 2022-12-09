@@ -18,9 +18,12 @@ code {
   width: 30em;
   height: 27em;
   position: absolute;
-  left: 33%;
+  left: 40%;
   top: 20%;
 
+}
+
+.flex{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -30,4 +33,17 @@ code {
 .container-item {
   max-width: 26em;
   background-color: white;
+}
+.errorPage {
+  justify-content: center;
+}
+
+.loginBtn {
+  border: none;
+  background-color: aquamarine;
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 20px;
+  font-weight: bolder;
+
 }

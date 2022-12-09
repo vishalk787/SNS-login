@@ -3,7 +3,7 @@
     display: flex;
 }
 .logo{
-    padding: 0 72% 0 2%;
+    padding: 0 82% 0 2%;
 }
 .logout{
     background-color: #3d0107;
@@ -15,5 +15,10 @@
 h1 ,h2{
     margin: 10px;
     padding: 5px 0;
+}
+
+.text{
+    text-decoration: none;
+    color: black;
 }
 
