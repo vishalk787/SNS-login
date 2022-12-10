@@ -21,7 +21,7 @@ const Users = () => {
     return (
         <div className='flex user'>
 
-            {userList.map( (user) => {
+            {userList?.length > 0 && userList.map( (user) => {
                 return <div className='list' key={user.id}>
                     <img src={user.avatar} alt='' className='avatar' />
                     <div className='userText'>

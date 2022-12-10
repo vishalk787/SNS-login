@@ -1,10 +1,18 @@
 import  TextField  from '@mui/material/TextField'
 
-let Input = ({lable, userFound}) => {
+let Input = ({lable, id, userFound, value, }) => {
     // console.log(userFound, 'userFound')
 
     return (
-        <TextField fullWidth helperText={userFound ? 'User not found' : ''}  id="outlined-basic" label={lable} variant="outlined" className='container-item'/>
+        <TextField
+         fullWidth 
+         id={id} 
+         className='container-item'
+         value={value}
+         label={lable} 
+         variant="outlined" 
+         helperText={userFound ? 'User not found' : ''}  
+         />
     )
 }
 

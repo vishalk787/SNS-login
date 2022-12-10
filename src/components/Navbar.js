@@ -8,6 +8,21 @@ let Navbar = () => {
 
     const [isLoggedIn, toggleLoggedIn ] = useState(false)
 
+    useEffect( () => {
+        if(localStorage.getItem('isLoggedIn')) {
+            toggleLoggedIn(localStorage.getItem('isLoggedIn'))
+        }
+    }, [] )
+
+    useEffect( () => {
+        if(isLoggedIn) localStorage.setItem('isLoggedIn' , isLoggedIn)
+    } )
+
+
+    function logout(){
+        toggleLoggedIn(!isLoggedIn)
+        localStorage.clear()
+    }
 
     return (
         <isLoggedInContext.Provider value={{isLoggedIn, toggleLoggedIn}} >
@@ -18,7 +33,7 @@ let Navbar = () => {
                     <>
                         <Link className='text' to='/users'> <h2>Users</h2> </Link>
                         <Link className='text' to='/profile'> <h2>Profile</h2> </Link>
-                        <Link className='text' to='/'> <button className='logout' onClick={ () => toggleLoggedIn(!isLoggedIn) } ><h2>Logout</h2></button> </Link>
+                        <Link className='text' to='/'> <button className='logout' onClick={ logout } ><h2>Logout</h2></button> </Link>
                     </>
                 }
             </div>
