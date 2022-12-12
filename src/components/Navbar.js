@@ -20,7 +20,10 @@ let Navbar = () => {
     } )
 
     const getRandomID = () => {return Math.floor(Math.random() * 13) + 1}
-    useEffect( () => { setRandomID( getRandomID() ) }, [] )
+    useEffect( 
+        () => { setRandomID( getRandomID() ) }, 
+        [] 
+    )
     // console.log(randomID)
 
     function logout(){

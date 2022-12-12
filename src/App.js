@@ -19,16 +19,5 @@ const router = createBrowserRouter(
     
   )
 )
-// const App = ( ) => {
 
- 
-//   return (
-//     <>
-//     <Navbar/>
-//     {/* <LoginForm/> */}
-
-//     </>
-//   )
-// }
-
-export { router}
+export { router }

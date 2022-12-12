@@ -1,7 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 
-// import {LoginError} from './Error'
 import { isLoggedInContext } from '../context'
 import { loginUser } from '../API'
 import Input from './Input'
@@ -39,7 +38,6 @@ let LoginForm = () => {
     
     return (
         <form className='container flex' id='loginForm' onSubmit={handleSubmit} onChange={handleChange}>
-            {/* <Outlet/> */}
             <Input lable='E-Mail' id='email' value={email} userFound={userFound} />
             <Input lable='Password' id='password'  value={password}/>
             <button type='submit' className='loginBtn' > Login </button>
