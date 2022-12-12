@@ -35,14 +35,6 @@ let LoginForm = () => {
 
         setEmail('')
         setPassword('')
-        // if(responseStatus === 200) {
-        //     toggleLoggedIn(!isLoggedIn)
-        // } else {
-        //     navigate('/error')
-        //     console.log('reached here')
-        //     throw new Error({status:responseStatus, statusText: 'User not found'})
-        // }
-        // console.log(isLoggedIn)
     }
     
     return (

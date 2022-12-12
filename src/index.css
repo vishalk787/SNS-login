@@ -47,3 +47,8 @@ code {
   font-weight: bolder;
 
 }
+.text{
+  text-decoration: none;
+  color: black;
+  padding: 0 9px;
+}

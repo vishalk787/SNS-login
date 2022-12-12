@@ -7,6 +7,7 @@ import {isLoggedInContext} from '../context'
 let Navbar = () => {
 
     const [isLoggedIn, toggleLoggedIn ] = useState(false)
+    const [randomID, setRandomID] = useState('')
 
     useEffect( () => {
         if(localStorage.getItem('isLoggedIn')) {
@@ -18,6 +19,9 @@ let Navbar = () => {
         if(isLoggedIn) localStorage.setItem('isLoggedIn' , isLoggedIn)
     } )
 
+    const getRandomID = () => {return Math.floor(Math.random() * 13) + 1}
+    useEffect( () => { setRandomID( getRandomID() ) }, [] )
+    // console.log(randomID)
 
     function logout(){
         toggleLoggedIn(!isLoggedIn)
@@ -32,7 +36,7 @@ let Navbar = () => {
                 { isLoggedIn &&
                     <>
                         <Link className='text' to='/users'> <h2>Users</h2> </Link>
-                        <Link className='text' to='/profile'> <h2>Profile</h2> </Link>
+                        <Link className='text' to={'/user/'+ randomID} state={randomID} onClick={() => setRandomID(getRandomID())}> <h2>Random User</h2> </Link>
                         <Link className='text' to='/'> <button className='logout' onClick={ logout } ><h2>Logout</h2></button> </Link>
                     </>
                 }

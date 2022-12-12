@@ -4,7 +4,7 @@ import { createBrowserRouter, createRoutesFromElements, Route } from 'react-rout
 import Navbar from './components/Navbar'
 import LoginForm from './components/Login'
 import Users from './components/Users'
-import Profile from './components/Profile'
+import User from './components/User'
 import { LoginError } from './components/Error'
 
 
@@ -13,7 +13,7 @@ const router = createBrowserRouter(
       <Route element={<Navbar/>} errorElement={<LoginError/>}>
         <Route path='/' element={<LoginForm/>}  />
         <Route path='/users' element={<Users/>} />
-        <Route path='/profile' element={<Profile/>} />
+        <Route path='/user/:id' element={<User/>}  />
         <Route path='/error' element={<LoginError />}/>
       </Route>
     
