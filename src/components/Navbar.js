@@ -4,7 +4,7 @@ import '../style/Navbar.css'
 import {isLoggedInContext} from '../context'
 
 
-let Navbar = () => {
+const Navbar = () => {
 
     const [isLoggedIn, toggleLoggedIn ] = useState(false)
     const [randomID, setRandomID] = useState('')
@@ -19,11 +19,14 @@ let Navbar = () => {
         if(isLoggedIn) localStorage.setItem('isLoggedIn' , isLoggedIn)
     } )
 
-    const getRandomID = () => {return Math.floor(Math.random() * 13) + 1}
-    useEffect( 
-        () => { setRandomID( getRandomID() ) }, 
-        [] 
-    )
+    const getRandomID = () => { 
+       let id =  Math.floor(Math.random() * 13) ;
+        if(id === 0) id = id + 1
+       return id
+    }
+    useEffect( () => { 
+        setRandomID( getRandomID() ) 
+    }, [])
     // console.log(randomID)
 
     function logout(){

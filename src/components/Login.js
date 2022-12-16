@@ -6,15 +6,15 @@ import { loginUser } from '../API'
 import Input from './Input'
 
 
-let LoginForm = () => {
+const LoginForm = () => {
 
-    let {isLoggedIn, toggleLoggedIn} = useContext(isLoggedInContext)
-    let [userFound, toggleUserFound] = useState(false)
-    let [email, setEmail] = useState('')
-    let [password, setPassword] = useState('')
+    const {isLoggedIn, toggleLoggedIn} = useContext(isLoggedInContext)
+    const [userFound, toggleUserFound] = useState(false)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const navigate = useNavigate()
     
-    function handleChange (e) {
+    function handleChange (e) {  
         // console.log(e.target.value, e.target.id)
         if(e.target.id === 'email') setEmail(e.target.value)
         if(e.target.id === 'password') setPassword(e.target.value)
@@ -23,7 +23,8 @@ let LoginForm = () => {
         () => {
             // console.log('im in useEffect')
             isLoggedIn ? navigate('/users',{replace: true}) : navigate('/', {replace: true})
-        }, [isLoggedIn, navigate]
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [isLoggedIn]
     )
 
     async function handleSubmit (e) {

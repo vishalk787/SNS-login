@@ -1,6 +1,6 @@
 import  TextField  from '@mui/material/TextField'
 
-let Input = ({lable, id, userFound, value, }) => {
+const Input = ({lable, id, userFound, value, }) => {
     // console.log(userFound, 'userFound')
 
     return (

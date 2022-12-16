@@ -8,7 +8,7 @@ const reqUserURL = '/users/'
 
 async function reqUserList()  {
     let URL = baseURL+reqUserListURL
-    let res = await axios.get(URL).then(resp => {return resp?.data?.data})
+    let res = await axios.get(URL).then(resp => resp?.data?.data)
     // console.log(res, 'log 2')
     return res
 }
@@ -32,5 +32,13 @@ async function loginUser (email, Password) {
     return data
 }
 
+// function loginUser1 (email, Password) {
+//     let URL = baseURL+loginURL
+//     let obj = {"email" :email, "password": Password}
+//     // console.log(obj)
+//     return axios.post(URL, obj)
+//     .then( (resp) => {return resp.status} )
+//     .catch( (err) => {return  err.response.status} )
+// }
 
 export  {reqUserList, loginUser, reqUser}
